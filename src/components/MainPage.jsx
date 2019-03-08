@@ -5,7 +5,13 @@ import MenuBar from './menuBar';
 class MainPage extends Component {
   constructor() {
     super();
-    this.state = {currentState: 0}
+    this.state = {
+      currentState: 0,
+      name: "",
+      quantity: "",
+      exp: "",
+      storage: "",
+    }
     this.text = [
       "Scan a bar code to store some food!",
       "Confirm the food item that you have scanned!",
@@ -14,6 +20,7 @@ class MainPage extends Component {
     this.handlePhotoClick = this.handlePhotoClick.bind(this);
     this.handleFormAdd = this.handleFormAdd.bind(this);
     this.handleFormCancel = this.handleFormCancel.bind(this);
+    this.changeManual = this.changeManual.bind(this);
 
   }
 
@@ -25,7 +32,7 @@ class MainPage extends Component {
             {this.text[this.state.currentState]}
           </div>
           {this.renderMainSection()}
-          <MenuBar />
+          <MenuBar changeManual={this.changeManual} />
         </div>
       </div>
     );
@@ -37,6 +44,9 @@ class MainPage extends Component {
       return this.renderPhotoIcon();
     }
     else if (this.state.currentState == 1) {
+      return this.renderScanned();
+    }
+    else if (this.state.currentState == 2) {
       return this.renderPopUp();
     }
   }
@@ -50,19 +60,51 @@ class MainPage extends Component {
   }
 
   handlePhotoClick() {
-    this.setState({currentState: 1});
+    this.setState({
+      currentState: 1,
+      name: "Carrot",
+      quantity: "500g",
+      exp: "11/1/2019",
+      storage: "Fridge",
+    });
   }
 
   handleFormAdd() {
-    this.setState({currentState: 0});
+    this.setState({
+      currentState: 0,
+      name: "",
+      quantity: "",
+      exp: "",
+      storage: "",
+    });
   }
 
   handleFormCancel() {
-    this.setState({currentState: 0});
+    this.setState({
+      currentState: 0,
+      name: "",
+      quantity: "",
+      exp: "",
+      storage: "",
+    });
+  }
+
+  changeManual() {
+    this.setState({
+      currentState: 2,
+      name: "",
+      quantity: "",
+      exp: "",
+      storage: "",
+    });
   }
 
   renderScanned() {
+    return this.renderPopUp();
+  }
 
+  handleHandleChange(field, event) {
+    this.setState({[field]: event.target.value})
   }
 
   renderPopUp() {
@@ -71,16 +113,16 @@ class MainPage extends Component {
         <div className="pop_up">
           <form>
             <div className="pop_up_divider">
-              Name: <input type="text" name="name" value="Carrot"/>
-              </div>
-            <div className="pop_up_divider">
-              Quantity: <input type="text" name="quantity" value="500g"/>
+              Name: <input type="text" name="name" value={this.state.name} onChange={(event) => {this.handleHandleChange("name", event)}}/>
             </div>
             <div className="pop_up_divider">
-              Expiray Date: <input type="text" name="exp" value="11/19/2019"/>
+              Quantity: <input type="text" name="quantity" value={this.state.quantity} onChange={(event) => {this.handleHandleChange("quantity", event)}}/>
             </div>
             <div className="pop_up_divider">
-              Storage: <input type="text" name="storage" value="Fridge"/>
+              Expiray Date: <input type="text" name="exp" value={this.state.exp} onChange={(event) => {this.handleHandleChange("exp", event)}}/>
+            </div>
+            <div className="pop_up_divider">
+              Storage: <input type="text" name="storage" value={this.state.storage} onChange={(event) => {this.handleHandleChange("storage", event)}}/>
             </div>
             <div className="form_buttons">
               <div className="pop_up_button cancel" onClick={this.handleFormCancel}>
