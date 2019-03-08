@@ -28,9 +28,18 @@ class MainPage extends Component {
     return (
       <div>
         <div className="main_page_container">
+		  <div className="header_bar">
+			<div className="notif_container" onClick={this.handlePhotoClick}>
+				<img className="notif_icon" src="https://img.icons8.com/ios-glyphs/30/000000/exclamation-mark.png" />
+			</div>
+			<div className="setting_container" onClick={this.handlePhotoClick}>
+				<img className="setting_icon" src="https://img.icons8.com/android/24/000000/settings.png" />
+			</div>
+		  </div>
           <div className="header_text">
             {this.text[this.state.currentState]}
           </div>
+		  
           {this.renderMainSection()}
           <MenuBar changeManual={this.changeManual} />
         </div>

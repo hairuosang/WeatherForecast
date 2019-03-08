@@ -160,6 +160,27 @@ button:active {
   width: 40px;
 }
 
+.header_bar {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 100%;
+}
+
+.notif_container {
+	width:50%;
+	padding: 15px;
+	left: 0;
+	text-align:left;
+}
+
+.setting_container {
+	right: 0;
+	padding: 15px;
+	width:50%;
+	text-align:right;
+}
+
 .align_left{
   margin-left: 70px;
 }
@@ -170,7 +191,7 @@ button:active {
   justify-content: center;
   text-align: center;
   width: 350px;
-  height: 150px;
+  height: 50px;
   margin-left: 20px;
   margin-right: 20px;
 }
