@@ -77,6 +77,10 @@ input[type="text"] {
     outline: none;
 }
 
+input[type="date"] {
+	width: 60%;
+}
+
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px #f16051 inset;
     -webkit-text-fill-color: #fff !important;
@@ -147,7 +151,7 @@ button:active {
   flex-direction: row;
   flex-wrap: wrap;
   width: 350px;
-  height: 600px;
+  height: 550px;
   border: 2px solid;
 }
 
@@ -229,4 +233,5 @@ button:active {
   justify-content: center;
   border: 2px solid black;
   margin-left: 42px;
+  cursor: pointer;
 }

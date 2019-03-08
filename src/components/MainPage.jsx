@@ -64,7 +64,7 @@ class MainPage extends Component {
       currentState: 1,
       name: "Carrot",
       quantity: "500g",
-      exp: "11/1/2019",
+      exp: "2019-03-12",
       storage: "Fridge",
     });
   }
@@ -119,10 +119,15 @@ class MainPage extends Component {
               Quantity: <input type="text" name="quantity" value={this.state.quantity} onChange={(event) => {this.handleHandleChange("quantity", event)}}/>
             </div>
             <div className="pop_up_divider">
-              Expiray Date: <input type="text" name="exp" value={this.state.exp} onChange={(event) => {this.handleHandleChange("exp", event)}}/>
+              Expiry: <input type="date" name="exp" value={this.state.exp} onChange={(event) => {this.handleHandleChange("exp", event)}}/>
             </div>
             <div className="pop_up_divider">
-              Storage: <input type="text" name="storage" value={this.state.storage} onChange={(event) => {this.handleHandleChange("storage", event)}}/>
+              Storage: 
+			  <select id="select" name="storage" value={this.state.storage} onChange={(event) => {this.handleHandleChange("storage", event)}}>
+                    <option value="fridge">Fridge</option>
+                    <option value="freezer">Freezer</option>
+					<option value="pantry">Pantry</option>
+				</select>
             </div>
             <div className="form_buttons">
               <div className="pop_up_button cancel" onClick={this.handleFormCancel}>
