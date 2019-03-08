@@ -65,15 +65,12 @@ body {
 input[type="text"] {
   background-color: transparent;
   border: 0;
-  border-bottom: solid 1px #f16051;
-  width: 30%;
+  border-bottom: solid 1px black;
+  width: 100px;
   padding-bottom: 4px;
-  color: #fff !important;
-  font-weight: lighter;
   letter-spacing: 2px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   margin-right: 20px;
-  font-size: 20px;
 }
 
 input[type="text"] {
@@ -167,8 +164,11 @@ button:active {
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  text-align: center;
   width: 350px;
   height: 150px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .photo_icon{
@@ -185,4 +185,48 @@ button:active {
   justify-content: center;
   width: 350px;
   height: 200px;
+}
+
+.pop_up_container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 350px;
+  height: 300px;
+}
+
+.pop_up {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  width: 250px;
+  height: 300px;
+  padding-top: 25px;
+  border: 2px solid;
+}
+
+.pop_up_divider {
+  width: 250px;
+  height: 50px;
+  margin-left: 25px;
+}
+
+.form_buttons {
+  height: 50px;
+  width: 250;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.pop_up_button {
+  width: 70px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  margin-left: 42px;
 }
