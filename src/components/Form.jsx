@@ -1,24 +1,13 @@
 import React from 'react'
 
 const Form = props => ( <form onSubmit={props.getWeather}>
-  <input type="text" name="city" placeholder="City..."></input>
-  <input type="text" name="country" placeholder="Country..."></input>
-  <input type="text" name="temp" placeholder="temp..."></input>
   
-  <label>
-    Name:
-    <input type="text" name="name"></input>
-  </label>
+  <label> Name: <input type="text" name="name"></input> </label> <br/>
+  <label> Expiry Date: <input type="text" name="expiry date"></input> </label> <br/>
+  <label> Quantity: <input type="text" name="quantity"></input> </label> <br/>
+  <label> Storage: <input type="text" name="storage"></input> </label> <br/>
 
-  <br/>
-
-  <label>
-    Expiry Date:
-    <input type="text" name="name" />
-  </label>
-  
-  
-  <button onClick={props.clicked}>csc318</button>
+  <button onClick={props.clicked}>csc318</button> <button onClick={props.clicked}>csc318</button>
 </form> );
    
 export default Form;
