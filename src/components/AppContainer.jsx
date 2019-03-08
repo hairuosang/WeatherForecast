@@ -10,12 +10,9 @@ class AppContainer extends React.Component {
   }
   render (){
     return (
-      <div>
+      <div className="main_page_container">
         <AppJumbotron title="Notifications!" />
         <ItemList />
-        <br />
-        <br />
-        <br />
         <ItemCount count={allTheThings.length} />
         <hr />
         <AppFooter />
@@ -48,7 +45,7 @@ class Item extends React.Component {
         <div className="row">
           <div className="col-md-12">
             <input type="checkbox" onClick={this.handleClick} />&nbsp;{text} 
-            <div>expires in {this.state.expire} days</div>
+            <div className="expiry">expires in {this.state.expire} days</div>
             <hr />
           </div>
         </div>
