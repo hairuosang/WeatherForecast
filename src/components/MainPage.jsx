@@ -30,7 +30,7 @@ class MainPage extends Component {
       <div>
         <div className="main_page_container">
         <HeaderBar changePage={this.props.changePage} />
-          <div className="header_text">
+          <div className="barcode_text">
             {this.text[this.state.currentState]}
           </div>
           {this.renderMainSection()}

@@ -287,10 +287,22 @@ button:active {
   justify-content: center;
   text-align: center;
   width: 350px;
-  height: 150px;
+  height: 50px;
   margin-left: 20px;
   margin-right: 20px;
 }
+
+.barcode_text {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  width: 350px;
+  height: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 
 .center {
   display: flex;
