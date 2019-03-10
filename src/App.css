@@ -58,8 +58,8 @@ h4 {
 }
 
 .checklist {
+  margin: 0!important;
   padding-left: 50px;
-  margin-bottom: 20px;
   border: 2px solid;
   width: 350px;
   }

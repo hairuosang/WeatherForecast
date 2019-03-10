@@ -14,9 +14,7 @@ class AppContainer extends React.Component {
       <div className="center">
         <div className="main_page_container">
 
-        <div className="header_text">
-            <h3 className="title">Notifications </h3>
-        </div>
+          <h3 className="title">Notifications </h3>
 
 
           <div>
