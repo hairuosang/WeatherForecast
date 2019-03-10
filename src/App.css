@@ -204,6 +204,7 @@ button:active {
 .menu_icon{
   height: 40px;
   width: 40px;
+  cursor: pointer;
 }
 
 .header_bar {
@@ -256,6 +257,7 @@ button:active {
   justify-content: center;
   width: 350px;
   height: 200px;
+  cursor: pointer;
 }
 
 .pop_up_container {
@@ -301,4 +303,110 @@ button:active {
   border: 2px solid black;
   margin-left: 42px;
   cursor: pointer;
+}
+
+.recipe_page_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 350px;
+  height: 550px;
+  border: 2px solid;
+}
+
+.recipe_header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: 75px;
+  border-bottom: 2px solid;
+}
+
+.recipe_filters {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 350px;
+  height: 100px;
+}
+
+.recipe_list_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 20px;
+  width: 350px;
+  height: 300px;
+}
+
+.recipe_block {
+  width: 305px;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.recipe_title {
+  width: 350px;
+  height: 30px;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid black;
+}
+
+.recipe_details {
+  width: 350px;
+  height: 50px;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.filter_container {
+  height: 30px;
+  border: 2px solid black;
+  display: flex;
+  flex-directon: row;
+  margin-right:  20px;
+}
+
+.filter_text {
+  height: 30px;
+  padding-left: 5px;
+  text-align: center;
+}
+
+.filter_close {
+  width: 15px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.filter_close_image {
+  width: 10px;
+  height: 10px;
+}
+
+.filter_list {
+  width: 350px;
+  height: 50px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.recipe_search {
+  width: 350px;
+  height: 50px;
+  padding-left: 20px;
 }
