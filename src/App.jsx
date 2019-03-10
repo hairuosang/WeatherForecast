@@ -3,6 +3,7 @@ import './App.css';
 import Titles from './components/Titles';
 import Form from './components/Form';
 import MainPage from './components/MainPage';
+import AppContainer from './components/AppContainer';
 import RecipePage from './components/RecipePage';
 
 const API_KEY =  "0e0fed06a1fde898d79e1142dd554ce0";
