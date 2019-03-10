@@ -6,6 +6,31 @@ body {
   font-family: "Open Sans", serif;
 }
 
+/*Victor component styling - notifs page */
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+}
+
+.title {
+  width: 180px;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;  
+
+}
+
+.checklist {
+  padding-left: 50px;
+  border: 2px solid;
+  width: 350px;
+  }
+
 .wrapper {
   height: 100vh;
   display: flex;

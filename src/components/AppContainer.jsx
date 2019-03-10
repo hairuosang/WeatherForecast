@@ -8,15 +8,32 @@ class AppContainer extends React.Component {
   constructor (props){
     super ();
   }
+
   render (){
     return (
-      <div className="main_page_container">
-        <AppJumbotron title="Notifications!" />
-        <ItemList />
-        <ItemCount count={allTheThings.length} />
-        <hr />
-        <AppFooter />
+      <div className="center">
+        <div className="main_page_container">
+
+        <div className="header_text">
+            <h3 className="title">Notifications </h3>
+        </div>
+
+
+          <div>
+            <ItemList className="checklist" />
+            <br />
+            <br />
+            <ItemCount count={allTheThings.length} />
+            <hr />
+         
+          </div>
+
+
+
+          <MenuBar />
+        </div>
       </div>
+
     );
   }
 }
@@ -24,7 +41,7 @@ class AppContainer extends React.Component {
 class Item extends React.Component {
   constructor (props){
     super ();
-
+    
     this.state = {
       checked: false,
       expire: 3
@@ -32,6 +49,7 @@ class Item extends React.Component {
 
     this.handleClick = this.handleClick.bind(this);    
   }
+  
   handleClick (e){
     this.setState({
       checked: !this.state.checked
@@ -45,7 +63,7 @@ class Item extends React.Component {
         <div className="row">
           <div className="col-md-12">
             <input type="checkbox" onClick={this.handleClick} />&nbsp;{text} 
-            <div className="expiry">expires in {this.state.expire} days</div>
+            <div>expires in {this.state.expire} days</div>
             <hr />
           </div>
         </div>
@@ -66,7 +84,7 @@ class ItemList extends React.Component {
   render (){
     let items = allTheThings.map(thing => thing);
     return (
-        <h4>{items}</h4>
+        <h4 className="checklist">{items}</h4>
     );
   }
 }
@@ -77,30 +95,10 @@ class ItemCount extends React.Component {
   }
   render (){
     return (
-      <h4>There are {this.props.count} items on your list</h4>
+      <h5 className="checklist" >{this.props.count} items on your list</h5>
     );
   }
 }
 
-class AppJumbotron extends React.Component {
-  render (){
-    return (
-      <div className="jumbotron">
-        <h2>{this.props.title}</h2>
-        <h3>About to expire!</h3>
-      </div>
-    );
-  }
-}
-
-class AppFooter extends React.Component {
-  render (){
-    return (
-      <div className="text-muted">
-        <small>&copy; {new Date().getFullYear()}</small>
-      </div>
-    );
-  }
-}
 
 export default AppContainer;
