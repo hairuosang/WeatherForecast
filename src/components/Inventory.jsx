@@ -2,16 +2,20 @@ import React, { Component } from 'react';
 import '../App.css';
 import MenuBar from './menuBar';
 
+
 "use strict"
 
-class AppContainer extends React.Component {
+class Inventory extends React.Component {
   constructor (props){
     super ();
-  }  
+  }
+
+  
   render (){
     return (
       <div>
         <div className="main_page_container">
+
         <div>
             <h3 className="title">Notifications </h3>
             <h4 className="title">About to Expire!</h4>
@@ -43,7 +47,7 @@ class Item extends React.Component {
     return (
         <div className="row">
           <div className="col-md-12">
-            <input type="checkbox" onClick={this.props.onClick}/>
+            <input type="checkbox" onClick={this.props.onClick} />
             <div>{this.props.message} expires in {this.props.expire} days</div>
             <hr />
           </div>
@@ -52,7 +56,11 @@ class Item extends React.Component {
   }
 }
 
+// let item2 = <Item message="Spinach"/>;
+// let item3 = <Item message="Fish" />;
+// let item4 = <Item message="Bread" />;
 
+//let allTheThings = [item2, item3, item4];
 
 class ItemList extends React.Component {
   constructor (props){
@@ -71,15 +79,21 @@ class ItemList extends React.Component {
     });
   }
   render (){
+
+    // let items = allTheThings.map(thing => thing);
     return (
         <div className="checklist"> 
           <Item message="Spinach" onClick={this.handleClick} expire="3"/>
           <Item message="Fish" onClick={this.handleClick} expire="4"/>
           <Item message="Bread" onClick={this.handleClick} expire="5"/>
-          <h6>{this.state.numCheck} recipes available using chosen ingredients</h6>
+          <h6>{this.state.numCheck} recipes availale using chosen ingredients</h6>
         </div>
     );
   }
 }
 
-export default AppContainer;
+
+
+
+
+export default Inventory;
