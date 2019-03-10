@@ -12,11 +12,6 @@ h4 {
 
 /*Victor component styling - notifs page */
 
-.center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .title {
   width: 100%;
@@ -25,13 +20,28 @@ h4 {
   flex-direction: row;
   align-items: center;
   border: 2px solid black;
-
 }
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.jumbotron {
+  background-color: #333;
+  color: white;
+  position: "absolute"; 
+  right: 50;
+}
+
 .setting {
   justify-content: center;
   text-align: center;
 
 }
+
 .settingtitle {
 	padding-left: 30px;
 }
@@ -77,6 +87,14 @@ h4 {
   box-shadow: 0px 13px 40px -13px rgba(0,0,0,0.75);
   width: 80%;
   margin: 0 auto;
+}
+
+
+.notif_container {
+	width:50%;
+	padding: 15px;
+	left: 0;
+	text-align:left;
 }
 
 .title-container {
@@ -135,10 +153,6 @@ input[type="text"] {
     outline: none;
 }
 
-input[type="date"] {
-	width: 60%;
-}
-
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px #f16051 inset;
     -webkit-text-fill-color: #fff !important;
@@ -179,6 +193,11 @@ button:active {
 .weather__key:last-child {
   border: 0;
 }
+.checklist {
+  padding-left: 50px;
+  border: 2px solid;
+  width: 350px;
+  }
 
 .weather__value {
   color: rgb(51, 96, 245);
@@ -203,35 +222,24 @@ button:active {
   margin-left: 40px;
   margin-right: 40px;
 }
+.setting_bar {
+  display: flex;
+  flex-direction: row;;
+  justify-content: space-around;
+  align-items: center;
+  align-self: flex-end;;
+  margin-bottom: 5px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
 
 .main_page_container{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 350px;
-  height: 550px;
+  height: 600px;
   border: 2px solid;
-}
-
-.jumbotron {
-	width: 100%;
-	text-align: center;
-	padding: 2rem 1rem;
-}
-
-.main_page_container h4 {
-	margin-left: 10%;
-	margin-right: 10%;
-	width: 100%;
-}
-
-.expiry {
-	font-size:15px;
-	text-align: right;
-}
-
-.text-muted {
-	margin-right: 10%;
 }
 
 .menu_icon{
@@ -279,9 +287,19 @@ button:active {
   justify-content: center;
   text-align: center;
   width: 350px;
-  height: 50px;
+  height: 150px;
   margin-left: 20px;
   margin-right: 20px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.settingtitle {
+  padding-right: 70px;
 }
 
 .photo_icon{
@@ -298,7 +316,6 @@ button:active {
   justify-content: center;
   width: 350px;
   height: 200px;
-  cursor: pointer;
 }
 
 .pop_up_container {
@@ -318,6 +335,25 @@ button:active {
   height: 300px;
   padding-top: 25px;
   border: 2px solid;
+}
+
+.settingTop {
+padding-left: 70px;
+width: 350px;
+
+}
+
+
+.title {
+  width: 350px;
+  height: 70px;
+  padding-right: 500;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;  
+
 }
 
 .pop_up_divider {
@@ -343,150 +379,6 @@ button:active {
   justify-content: center;
   border: 2px solid black;
   margin-left: 42px;
-  cursor: pointer;
-}
-
-.recipe_page_container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 350px;
-  height: 550px;
-  border: 2px solid;
-}
-
-.recipe_header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 350px;
-  height: 75px;
-  border-bottom: 2px solid;
-}
-
-.recipe_filters {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  width: 350px;
-  height: 100px;
-}
-
-.recipe_list_container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding-left: 20px;
-  width: 350px;
-  height: 300px;
-}
-
-.recipe_block {
-  width: 305px;
-  height: 100px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  border: 2px solid black;
-  cursor: pointer;
-}
-
-.recipe_title {
-  width: 350px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 2px solid black;
-}
-
-.recipe_details {
-  width: 350px;
-  height: 50px;
-  padding-left: 20px;
-  display: flex;
-  align-items: center;
-}
-
-.filter_container {
-  height: 30px;
-  border: 2px solid black;
-  display: flex;
-  flex-directon: row;
-  margin-right:  20px;
-}
-
-.filter_text {
-  height: 30px;
-  padding-left: 5px;
-  text-align: center;
-}
-
-.filter_close {
-  width: 15px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.filter_close_image {
-  width: 10px;
-  height: 10px;
-}
-
-.filter_list {
-  width: 350px;
-  height: 50px;
-  padding-left: 20px;
-  display: flex;
-  flex-direction: row;
-}
-
-.recipe_search {
-  width: 350px;
-  height: 50px;
-  padding-left: 20px;
-  padding-top: 15px;
-}
-
-.view_recipe_block {
-  width: 300px;
-  height: 325px;
-  margin-top: 25px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  border: 2px black solid;
-}
-
-.ingredients_header {
-  width: 300px;
-  height: 25px;
-  padding-left: 20px;
-}
-
-.align_center {
-  width: 300px;
-  display: flex;
-  justify-content: center;
-  padding-right: 40px;
-}
-
-.recipe_buttons {
-  height: 50px;
-  width: 300;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.ingredient_list {
-  margin-top: -15px;
 }
 
 .header_text {
