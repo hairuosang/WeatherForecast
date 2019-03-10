@@ -5,7 +5,7 @@ import Form from './components/Form';
 import MainPage from './components/MainPage';
 import AppContainer from './components/AppContainer';
 import RecipePage from './components/RecipePage';
-import Setting from './components/Setting';
+import SettingsPage from './components/Setting';
 
 const API_KEY =  "0e0fed06a1fde898d79e1142dd554ce0";
 
@@ -38,7 +38,7 @@ class App extends Component {
       )
     } else if (this.state.currentState == 3) {
       return (
-        <Setting changePage={this.changeState} />
+        <SettingsPage changePage={this.changeState} />
       )
     }
   }
