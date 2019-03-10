@@ -6,7 +6,8 @@ import MainPage from './components/MainPage';
 import AppContainer from './components/AppContainer';
 import RecipePage from './components/RecipePage';
 import SettingsPage from './components/Setting';
-import FoodDetails from './components/FoodDetails';
+import StoragePage from './components/StoragePage';
+
 
 const API_KEY =  "0e0fed06a1fde898d79e1142dd554ce0";
 
@@ -42,7 +43,7 @@ class App extends Component {
       )
     } else if (this.state.currentState == 3) {
       return (
-        <SettingsPage changePage={this.changeState} />
+        <StoragePage changePage={this.changeState} />
       )
     }
   }

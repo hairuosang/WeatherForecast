@@ -16,7 +16,7 @@ class AppContainer extends React.Component {
             <h3 className="title">Notifications </h3>
             <h4 className="title">About to Expire!</h4>
         </div>
-
+		
           <div>
             <ItemList className="checklist" />
             <div className="checklist">
