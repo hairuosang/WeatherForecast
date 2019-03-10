@@ -29,10 +29,10 @@ class MainPage extends Component {
       <div>
         <div className="main_page_container">
 		  <div className="header_bar">
-			<div className="notif_container" onClick={this.handlePhotoClick}>
+			<div className="notif_container">
 				<img className="notif_icon" src="https://img.icons8.com/ios-glyphs/30/000000/exclamation-mark.png" />
 			</div>
-			<div className="setting_container" onClick={this.handlePhotoClick}>
+			<div className="setting_container">
 				<img className="setting_icon" src="https://img.icons8.com/android/24/000000/settings.png" />
 			</div>
 		  </div>

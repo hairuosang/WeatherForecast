@@ -12,6 +12,8 @@ class Setting extends React.Component {
     this.state = {
       clicked : false
     }
+	
+	this.handlePhotoClick = this.handlePhotoClick.bind(this);
   }
 
   handlePhotoClick() {  //handle setting icon click
@@ -26,7 +28,7 @@ class Setting extends React.Component {
         <div className="main_page_container">
         
         <h3 className="title">
-        <div className="notif_container" onClick={this.handlePhotoClick}>
+        <div className="setting_page_container" onClick={this.handlePhotoClick}>
         <img className="notif_icon" src="https://img.icons8.com/ios/50/000000/settings-filled.png"></img>
 			  </div>
          <div className="settingtitle">Settings</div>
@@ -78,7 +80,7 @@ class Item extends React.Component {
   render (){
     let text = this.state.checked ? <strike>{this.props.message}</strike> : this.props.message;
     return (
-        <div className="row">
+        <div className="setting_row">
           <div className="app">
             &nbsp;{text} 
             <Toggler onClick={this.handleClick} />
