@@ -24,6 +24,29 @@ body {
   border: 2px solid black;
 
 }
+.setting {
+  justify-content: center;
+  text-align: center;
+
+}
+.settingtitle {
+  padding-right: 70px;
+}
+.settingTop {
+  padding-left: 70px;
+  width: 350px;
+  
+  }
+.setting_bar {
+  display: flex;
+  flex-direction: row;;
+  justify-content: space-around;
+  align-items: center;
+  align-self: flex-end;;
+  margin-bottom: 5px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
 
 .checklist {
   padding-left: 50px;
