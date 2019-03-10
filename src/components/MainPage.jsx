@@ -122,21 +122,21 @@ class MainPage extends Component {
         <div className="pop_up">
           <form>
             <div className="pop_up_divider">
-              Name: <input type="text" name="name" value={this.state.name} onChange={(event) => {this.handleHandleChange("name", event)}}/>
+              Name:  <input type="text" name="name" value={this.state.name} onChange={(event) => {this.handleHandleChange("name", event)}}/>
             </div>
             <div className="pop_up_divider">
-              Quantity: <input type="text" name="quantity" value={this.state.quantity} onChange={(event) => {this.handleHandleChange("quantity", event)}}/>
+              Quantity:  <input type="text" name="quantity" value={this.state.quantity} onChange={(event) => {this.handleHandleChange("quantity", event)}}/>
             </div>
             <div className="pop_up_divider">
-              Expiry: <input type="date" name="exp" value={this.state.exp} onChange={(event) => {this.handleHandleChange("exp", event)}}/>
+              Expiry:  <input type="date" name="exp" value={this.state.exp} onChange={(event) => {this.handleHandleChange("exp", event)}}/>
             </div>
             <div className="pop_up_divider">
-              Storage: 
-			  <select id="select" name="storage" value={this.state.storage} onChange={(event) => {this.handleHandleChange("storage", event)}}>
-                    <option value="fridge">Fridge</option>
-                    <option value="freezer">Freezer</option>
-					<option value="pantry">Pantry</option>
-				</select>
+              Storage:  
+      			  <select id="select" name="storage" value={this.state.storage} onChange={(event) => {this.handleHandleChange("storage", event)}}>
+                <option value="fridge">Fridge</option>
+                <option value="freezer">Freezer</option>
+      					<option value="pantry">Pantry</option>
+      				</select>
             </div>
             <div className="form_buttons">
               <div className="pop_up_button cancel" onClick={this.handleFormCancel}>
