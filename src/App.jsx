@@ -8,6 +8,7 @@ import RecipePage from './components/RecipePage';
 import SettingsPage from './components/Setting';
 import StoragePage from './components/StoragePage';
 
+
 const API_KEY =  "0e0fed06a1fde898d79e1142dd554ce0";
 
 class App extends Component {
@@ -27,7 +28,10 @@ class App extends Component {
   renderPages() {
     if (this.state.currentState == 0) {
       return (
-        <MainPage changePage={this.changeState} />
+        <FoodDetails changePage={this.changeState} foodName="fish" 
+        image="https://i.imgur.com/zxFvvYF.png" amount="50" expire="3"
+        des="description body" han="han body" rec="rec body"  
+        />
       )
     } else if (this.state.currentState == 1) {
       return (

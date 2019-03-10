@@ -72,7 +72,16 @@ h4 {
   padding-left: 50px;
   border: 2px solid;
   width: 350px;
-  }
+}
+
+.checklist2 {
+  padding-left: 50px;
+  margin-bottom: 20px;
+  border: 2px solid;
+  width: 350px;
+  height: 335px;
+  text-align:left;
+}
 
 .wrapper {
   height: 100vh;
@@ -176,41 +185,13 @@ button:active {
   outline: none;
 }
 
-.weather__info {
-  width: 60%;
-  font-size: 20px;
-  font-weight: 200;
-  letter-spacing: 2px;
-}
-
-.weather__key {
-  color: #f16051;
-  border-bottom: solid 2px rgba(255,255,255,0.06);
-  padding: 20px 0 20px 0;
-  font-weight: 400;
-}
-
-.weather__key:last-child {
-  border: 0;
-}
 .checklist {
   padding-left: 50px;
   border: 2px solid;
   width: 350px;
   }
 
-.weather__value {
-  color: rgb(51, 96, 245);
-  font-weight: 200;
-  font-weight: bolder;
-}
 
-.weather__error {
-  color: #516ef1;
-  font-size: 20px;
-  letter-spacing: 1px;
-  font-weight: 200;
-}
 
 .menu_bar{
   display: flex;
@@ -242,6 +223,18 @@ button:active {
   border: 2px solid;
 }
 
+.right{
+  
+  width: -500px;
+  height: 100px;
+}
+.right2{
+
+  width:20;
+  height: 15px;
+}
+
+
 .menu_icon{
   height: 40px;
   width: 40px;
@@ -269,6 +262,9 @@ button:active {
 	width:50%;
 	text-align:right;
 }
+
+
+
 
 .setting_page_container {
 	right: 0;
@@ -359,6 +355,18 @@ width: 350px;
 .title {
   width: 350px;
   height: 70px;
+  padding-right: 500;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;  
+
+}
+
+.title2 {
+  width: 350px;
+  height: 100px;
   padding-right: 500;
   display: flex;
   flex-direction: row;
