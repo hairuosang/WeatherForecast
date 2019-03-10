@@ -10,13 +10,44 @@ import Setting from './components/Setting';
 const API_KEY =  "0e0fed06a1fde898d79e1142dd554ce0";
 
 class App extends Component {
-  state = {}
+
+  constructor() {
+    super();
+    this.state = {
+       currentState: 0
+    }
+    this.changeState = this.changeState.bind(this)
+  }
+
+  changeState(stateNumber) {
+    this.setState({currentState: stateNumber})
+  }
+
+  renderPages() {
+    if (this.state.currentState == 0) {
+      return (
+        <MainPage changePage={this.changeState} />
+      )
+    } else if (this.state.currentState == 1) {
+      return (
+        <RecipePage changePage={this.changeState} />
+      )
+    } else if (this.state.currentState == 2) {
+      return (
+        <AppContainer changePage={this.changeState} />
+      )
+    } else if (this.state.currentState == 3) {
+      return (
+        <Setting changePage={this.changeState} />
+      )
+    }
+  }
 
   render() {
     return (
       <div>
         <div className="wrapper">
-          <Setting />
+          {this.renderPages()}
         </div>
       </div>
     );

@@ -12,7 +12,7 @@ class Setting extends React.Component {
     this.state = {
       clicked : false
     }
-	
+
 	this.handlePhotoClick = this.handlePhotoClick.bind(this);
   }
 
@@ -26,50 +26,50 @@ class Setting extends React.Component {
     return (
       <div className="center">
         <div className="main_page_container">
-        
+
         <h3 className="title">
         <div className="setting_page_container" onClick={this.handlePhotoClick}>
         <img className="notif_icon" src="https://img.icons8.com/ios/50/000000/settings-filled.png"></img>
 			  </div>
          <div className="settingtitle">Settings</div>
          </h3>
-        
+
           <div className="upperSetting">
             <h4 className="settingTop">Notifications -> Alert</h4>
             <ItemList />
             <h4 className="settingTop">Notifiy Expiry</h4>
-    
+
             <br />
             <ItemCount count={allTheThings.length} />
             <SettingBar>Allergies</SettingBar>
             <SettingBar>Appliances</SettingBar>
             <SettingBar>Preference</SettingBar>
             <hr />
-            
+
           </div>
 
 
-          <MenuBar />
+          <MenuBar changePage={this.props.changePage} />
         </div>
       </div>
 
     );
   }
-  
+
 }
 
 class Item extends React.Component {
   constructor (props){
     super ();
-    
+
     this.state = {
       checked: false,
       expire: 3
     };
 
-    this.handleClick = this.handleClick.bind(this);    
+    this.handleClick = this.handleClick.bind(this);
   }
-  
+
   handleClick (e){
     this.setState({
       checked: !this.state.checked
@@ -82,7 +82,7 @@ class Item extends React.Component {
     return (
         <div className="setting_row">
           <div className="app">
-            &nbsp;{text} 
+            &nbsp;{text}
             <Toggler onClick={this.handleClick} />
             <hr />
           </div>
@@ -97,19 +97,19 @@ class Toggler extends React.Component {
     onText: 'On',
     offText: 'Off',
   };
-  
+
   constructor(props) {
     super(props);
-    
+
     this.state = { checked: props.checked };
-    
+
     this.handleChange = this.handleChange.bind(this);
   }
-  
+
   handleChange() {
     this.setState({ checked: !this.state.checked });
   }
-  
+
   render() {
     return (
       <input

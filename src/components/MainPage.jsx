@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import MenuBar from './menuBar';
+import HeaderBar from './HeaderBar';
 
 class MainPage extends Component {
   constructor() {
@@ -28,20 +29,12 @@ class MainPage extends Component {
     return (
       <div>
         <div className="main_page_container">
-		  <div className="header_bar">
-			<div className="notif_container">
-				<img className="notif_icon" src="https://img.icons8.com/ios-glyphs/30/000000/exclamation-mark.png" />
-			</div>
-			<div className="setting_container">
-				<img className="setting_icon" src="https://img.icons8.com/android/24/000000/settings.png" />
-			</div>
-		  </div>
+        <HeaderBar changePage={this.props.changePage} />
           <div className="header_text">
             {this.text[this.state.currentState]}
           </div>
-		  
           {this.renderMainSection()}
-          <MenuBar changeManual={this.changeManual} />
+          <MenuBar changeManual={this.changeManual} changePage={this.props.changePage} />
         </div>
       </div>
     );
@@ -131,7 +124,7 @@ class MainPage extends Component {
               Expiry:  <input type="date" name="exp" value={this.state.exp} onChange={(event) => {this.handleHandleChange("exp", event)}}/>
             </div>
             <div className="pop_up_divider">
-              Storage:  
+              Storage:
       			  <select id="select" name="storage" value={this.state.storage} onChange={(event) => {this.handleHandleChange("storage", event)}}>
                 <option value="fridge">Fridge</option>
                 <option value="freezer">Freezer</option>

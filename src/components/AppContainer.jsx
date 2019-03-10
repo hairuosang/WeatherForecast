@@ -25,12 +25,12 @@ class AppContainer extends React.Component {
             <br />
             <ItemCount count={allTheThings.length} />
             <hr />
-         
+
           </div>
 
 
 
-          <MenuBar />
+          <MenuBar changePage={this.props.changePage}/>
         </div>
       </div>
 
@@ -41,15 +41,15 @@ class AppContainer extends React.Component {
 class Item extends React.Component {
   constructor (props){
     super ();
-    
+
     this.state = {
       checked: false,
       expire: 3
     };
 
-    this.handleClick = this.handleClick.bind(this);    
+    this.handleClick = this.handleClick.bind(this);
   }
-  
+
   handleClick (e){
     this.setState({
       checked: !this.state.checked
@@ -62,7 +62,7 @@ class Item extends React.Component {
     return (
         <div className="row">
           <div className="col-md-12">
-            <input type="checkbox" onClick={this.handleClick} />&nbsp;{text} 
+            <input type="checkbox" onClick={this.handleClick} />&nbsp;{text}
             <div>expires in {this.state.expire} days</div>
             <hr />
           </div>

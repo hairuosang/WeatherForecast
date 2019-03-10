@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import MenuBar from './menuBar';
+import HeaderBar from './HeaderBar';
 
 class RecipePage extends Component {
   constructor() {
@@ -38,11 +39,9 @@ class RecipePage extends Component {
     return (
       <div>
         <div className="recipe_page_container">
-          <div className="recipe_header">
-            Recipes
-          </div>
+          <HeaderBar changePage={this.props.changePage} headerText={"Recipes"}/>
           {this.renderBody()}
-          <MenuBar />
+          <MenuBar changePage={this.props.changePage}/>
         </div>
       </div>
     );
