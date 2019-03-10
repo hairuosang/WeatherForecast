@@ -11,7 +11,7 @@ body {
 .center {
   display: flex;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
 }
 
 .title {
@@ -21,7 +21,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  border: 2px solid black;  
+  border: 2px solid black;
 
 }
 
@@ -309,6 +309,7 @@ button:active {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
   width: 350px;
   height: 550px;
   border: 2px solid;
@@ -355,9 +356,9 @@ button:active {
 .recipe_title {
   width: 350px;
   height: 30px;
-  padding-left: 20px;
   display: flex;
   align-items: center;
+  justify-content: center;
   border-bottom: 2px solid black;
 }
 
@@ -409,4 +410,39 @@ button:active {
   width: 350px;
   height: 50px;
   padding-left: 20px;
+}
+
+.view_recipe_block {
+  width: 300px;
+  height: 325px;
+  margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  border: 2px black solid;
+}
+
+.ingredients_header {
+  width: 300px;
+  height: 25px;
+  padding-left: 20px;
+}
+
+.align_center {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  padding-right: 40px;
+}
+
+.recipe_buttons {
+  height: 50px;
+  width: 300;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.ingredient_list {
+  margin-top: -15px;
 }
