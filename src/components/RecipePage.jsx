@@ -21,6 +21,7 @@ class RecipePage extends Component {
           ingredients: ["pork", "sauce", "rice"]
         },
       ],
+      currentRecipes: [],
       filters: [],
       currentState: 0,
       currentRecipe: {},
@@ -28,10 +29,12 @@ class RecipePage extends Component {
     this.handleSearchEnter = this.handleSearchEnter.bind(this);
     this.handleMakeCancel = this.handleMakeCancel.bind(this);
     this.handleMake = this.handleMake.bind(this);
-
+    this.filterRecipes = this.filterRecipes.bind(this);
+    this.state.currentRecipes = this.state.recipes;
   }
 
   render() {
+    //console.log(this.state.currentRecipes)
     return (
       <div>
         <div className="recipe_page_container">
@@ -155,6 +158,20 @@ class RecipePage extends Component {
     return ingredientList;
   }
 
+  filterRecipes() {
+    var recipeList = this.state.recipes.filter((recipe) => {
+        var filterList = this.state.filters.filter((filter) => {
+          return !recipe.filters.includes(filter);
+        })
+        console.log(filterList);
+        return filterList.length == 0;
+    })
+    console.log(recipeList);
+    this.setState({
+      currentRecipes: recipeList,
+    })
+  }
+
   handleChange(field, event) {
     this.setState({[field]: event.target.value})
   }
@@ -175,8 +192,9 @@ class RecipePage extends Component {
     if (event.key == "Enter") {
       this.setState({
         filters: this.state.filters.concat([this.state.filterSearch]),
-        filterSearch: "",
-      })
+        filterSearch: ""},
+        this.filterRecipes
+      )
     }
   }
 
@@ -201,16 +219,16 @@ class RecipePage extends Component {
     this.setState({
       filters: this.state.filters.filter(oldFilter =>
          oldFilter != removeFilter
-      )}
+      )},
+      this.filterRecipes
     )
   }
 
   renderRecipes() {
     var renderList = []
-    this.state.recipes.map((recipe) => {
+    this.state.currentRecipes.map((recipe) => {
       renderList.push(this.renderRecipe(recipe))
     })
-    console.log(renderList);
     return renderList
   }
 
