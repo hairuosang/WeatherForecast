@@ -13,13 +13,13 @@ class AppContainer extends React.Component {
       <div>
         <div className="main_page_container">
         <div>
-            <h3 className="title">Notifications </h3>
-            <h4 className="title">About to Expire!</h4>
+            <h3 className="title2">Notifications </h3>
+            <h4 className="title2">About to Expire!</h4>
         </div>
 		
           <div>
-            <ItemList className="checklist" />
-            <div className="checklist">
+            <ItemList/>
+            <div className="checklist3">
               News: E-coli lettuce out break..
             </div>
          
@@ -37,12 +37,10 @@ class Item extends React.Component {
   constructor (props){
     super ();   
   }
-
   render (){
-   
     return (
-        <div className="row">
-          <div className="col-md-12">
+        <div >
+          <div >
             <input type="checkbox" onClick={this.props.onClick}/>
             <div>{this.props.message} expires in {this.props.expire} days</div>
             <hr />

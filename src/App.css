@@ -71,14 +71,16 @@ h4 {
 .checklist {
   margin: 0!important;
   padding-left: 50px;
-  border: 2px solid;
+  border-top: 0px solid;
+  border-bottom: 0px solid;
   width: 350px;
 }
 
 .checklist2 {
   padding-left: 50px;
   margin-bottom: 20px;
-  border: 2px solid;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
   width: 350px;
   height: 335px;
   text-align:left;
@@ -188,10 +190,16 @@ button:active {
 
 .checklist {
   padding-left: 50px;
-  border: 2px solid;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
   width: 350px;
   }
 
+.checklist3{
+    padding-left: 50px;
+    border-bottom: 2px solid;
+    width: 350px;
+}
 
 
 .menu_bar{
@@ -362,7 +370,7 @@ width: 350px;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  border: 2px solid black;
+  border: 2px solid;
 
 }
 
@@ -374,7 +382,8 @@ width: 350px;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  border: 2px solid black;
+ 
+  border-bottom: 2px solid;
 
 }
 
