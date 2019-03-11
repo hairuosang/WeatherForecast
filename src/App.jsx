@@ -86,10 +86,7 @@ class App extends Component {
   renderPages() {
     if (this.state.currentState == 0) {
       return (
-        <FoodDetails changePage={this.changeState} foodName="fish"
-        image="https://i.imgur.com/zxFvvYF.png" amount="50" expire="3"
-        des="description body" han="han body" rec="rec body"
-        />
+        <MainPage changePage={this.changeState} />
       )
     } else if (this.state.currentState == 1) {
       return (
@@ -104,7 +101,7 @@ class App extends Component {
       )
     } else if (this.state.currentState == 3) {
       return (
-        <StoragePage changePage={this.changeState} />
+        <SettingsPage changePage={this.changeState} />
       )
     } else if (this.state.currentState == 4) {
       return (
@@ -114,6 +111,13 @@ class App extends Component {
           storage={this.state.storage}
           findRecipes={this.findRecipes}
           filterRecipes={this.filterRecipes}
+        />
+      )
+    } else if (this.state.currentState == 5) {
+      return (
+        <FoodDetails changePage={this.changeState} foodName="fish"
+        image="https://i.imgur.com/zxFvvYF.png" amount="50" expire="3"
+        des="description body" han="han body" rec="rec body"
         />
       )
     }
