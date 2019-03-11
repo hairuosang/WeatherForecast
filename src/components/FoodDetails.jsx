@@ -7,7 +7,7 @@ import MenuBar from './menuBar';
 class FoodDetails extends React.Component {
   constructor (props){
     super ();
-  }  
+  }
   render (){
     return (
       <div>
@@ -18,13 +18,13 @@ class FoodDetails extends React.Component {
                 <img src={this.props.image} className="menu_icon left"/>
                 <div className="rightside"></div>
                 <div className>Amount: {this.props.amount} </div>  {"\n"} <br/>
-                <div className> Expires in {this.props.expire} days</div> 
+                <div className> Expires on {this.props.expire} </div> 
                 <div/>
             </div>
         </div>
 
           <div>
-            <ItemList className="checklist2" des={this.props.des} 
+            <ItemList className="checklist2" des={this.props.des}
                       han={this.props.han} rec={this.props.rec}/>
           </div>
 
@@ -38,10 +38,10 @@ class FoodDetails extends React.Component {
 
 class Item extends React.Component {
   constructor (props){
-    super ();   
+    super ();
   }
   render (){
-   
+
     return (
         <div className="row">
           <div className="col-md-12">
@@ -60,7 +60,7 @@ class ItemList extends React.Component {
   }
   render (){
     return (
-        <div className="checklist2"> 
+        <div className="checklist2">
             <br/>
           <Item message="Description" onClick={this.handleClick} body={this.props.des}/>
          <hr/>

@@ -269,6 +269,10 @@ button:active {
 	text-align:left;
 }
 
+.notif_icon {
+  cursor: pointer;
+}
+
 .setting_container {
 	right: 0;
 	padding: 15px;
