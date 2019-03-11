@@ -4,8 +4,8 @@ import MenuBar from './menuBar';
 import HeaderBar from './HeaderBar';
 
 class RecipePage extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       filterSearch: "",
       recipes: [
@@ -22,8 +22,8 @@ class RecipePage extends Component {
           ingredients: ["pork", "sauce", "rice"]
         },
       ],
-      currentRecipes: [],
-      filters: [],
+      currentRecipes: props.filterRecipes(props.currentFilters),
+      filters: props.currentFilters,
       currentState: 0,
       currentRecipe: {},
     }
@@ -31,7 +31,7 @@ class RecipePage extends Component {
     this.handleMakeCancel = this.handleMakeCancel.bind(this);
     this.handleMake = this.handleMake.bind(this);
     this.filterRecipes = this.filterRecipes.bind(this);
-    this.state.currentRecipes = this.state.recipes;
+    console.log(props.filterRecipes(props.currentFilters))
   }
 
   render() {
@@ -157,6 +157,7 @@ class RecipePage extends Component {
   }
 
   filterRecipes() {
+    console.log(this.state.filters);
     var recipeList = this.state.recipes.filter((recipe) => {
         var filterList = this.state.filters.filter((filter) => {
           return !recipe.filters.includes(filter);
@@ -222,6 +223,7 @@ class RecipePage extends Component {
 
   renderRecipes() {
     var renderList = []
+    console.log(this.state.currentRecipes)
     this.state.currentRecipes.map((recipe) => {
       renderList.push(this.renderRecipe(recipe))
     })

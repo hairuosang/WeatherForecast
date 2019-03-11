@@ -15,7 +15,7 @@ const HeaderBar = props => {
       </div>
       <div className="setting_container">
         <img
-          className="setting_icon"
+          className="notif_icon"
           src="https://img.icons8.com/android/24/000000/settings.png"
           onClick={(event) => {props.changePage(3)}}
         />

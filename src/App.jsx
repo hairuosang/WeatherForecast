@@ -18,28 +18,38 @@ class App extends Component {
     this.state = {
        currentState: 0,
        storageUnits: [
-         {name: "all"},
-         {name: "fridge"},
-         {name: "freezer"},
+         {name: "all", items: []},
+         {name: "fridge", items: []},
+         {name: "freezer", items: []},
+         {name: "other", items: []},
        ],
        storage: [
          {
            name: "Tomato",
            location: "Fridge",
            expDate: "11/1/2019",
-           quantity: "100g"
+           quantity: "100g",
+           han: "amazing food safety tipes",
+           description: "amazing facts about this food",
+           rec: "amazing and tasty recipes"
          },
          {
            name: "Pork",
            location: "Fridge",
            expDate: "1/1/2019",
-           quantity: "400g"
+           quantity: "400g",
+           han: "amazing food safety tipes",
+           description: "amazing facts about this food",
+           rec: "amazing and tasty recipes"
          },
          {
            name: "Fish",
            location: "Freezer",
            expDate: "2/1/2019",
-           quantity: "2pc"
+           quantity: "2pc",
+           han: "amazing food safety tipes",
+           description: "amazing facts about this food",
+           rec: "amazing and tasty recipes"
          },
        ],
        recipes: [
@@ -47,23 +57,33 @@ class App extends Component {
            name: "Tomato and Egg",
            details: "A very nicely and detalied recipe",
            filters: ["tomato", "egg"],
-           ingredients: ["tomato", "egg", "salt"]
+           ingredients: ["tomato", "egg", "salt"],
          },
          {
            name: "Minced Pork",
            details: "A very nicely and detalied recipe",
            filters: ["minced", "pork"],
-           ingredients: ["pork", "sauce", "rice"]
+           ingredients: ["pork", "sauce", "rice"],
          },
        ],
        currentRecipes: [],
+       currentFood: {},
+       currentFilters: [],
     }
     this.changeState = this.changeState.bind(this)
     this.findRecipes = this.findRecipes.bind(this)
     this.filterRecipes = this.filterRecipes.bind(this)
+    this.changeToFoodPage = this.changeToFoodPage.bind(this)
+  }
+
+  changeToFoodPage(item) {
+    this.setState({currentFood: item, currentState: 5})
   }
 
   changeState(stateNumber) {
+    if (stateNumber !=  1) {
+      this.setState({currentFilters: []})
+    }
     this.setState({currentState: stateNumber})
   }
 
@@ -74,13 +94,15 @@ class App extends Component {
   filterRecipes(filters) {
     var recipeList = this.state.recipes.filter((recipe) => {
         var filterList = filters.filter((filter) => {
-          return !recipe.filters.includes(filter.toLowerCase());
+          return !recipe.filters.includes(filter);
         })
         return filterList.length == 0;
     })
     this.setState({
       currentRecipes: recipeList,
+      currentFilters: filters,
     })
+    return recipeList
   }
 
   renderPages() {
@@ -93,6 +115,7 @@ class App extends Component {
         <RecipePage
           changePage={this.changeState}
           filterRecipes={this.filterRecipes}
+          currentFilters={this.state.currentFilters}
         />
       )
     } else if (this.state.currentState == 2) {
@@ -111,13 +134,20 @@ class App extends Component {
           storage={this.state.storage}
           findRecipes={this.findRecipes}
           filterRecipes={this.filterRecipes}
+          changeToFoodPage={this.changeToFoodPage}
         />
       )
     } else if (this.state.currentState == 5) {
       return (
-        <FoodDetails changePage={this.changeState} foodName="fish"
-        image="https://i.imgur.com/zxFvvYF.png" amount="50" expire="3"
-        des="description body" han="han body" rec="rec body"
+        <FoodDetails
+          changePage={this.changeState}
+          foodName={this.state.currentFood.name}
+          image="https://i.imgur.com/zxFvvYF.png"
+          amount={this.state.currentFood.quantity}
+          expire={this.state.currentFood.expDate}
+          des={this.state.currentFood.description}
+          han={this.state.currentFood.han}
+          rec={this.state.currentFood.rec}
         />
       )
     }

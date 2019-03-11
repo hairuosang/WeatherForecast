@@ -45,11 +45,11 @@ class StoragePage extends Component {
 
   onInputSelect(event) {
     if (event.target.checked) {
-      this.setState({currentSelected: [...this.state.currentSelected, this.props.storage[event.target.name].name]},
+      this.setState({currentSelected: [...this.state.currentSelected, this.props.storage[event.target.name].name.toLowerCase()]},
         () => {this.props.filterRecipes(this.state.currentSelected)})
     } else {
       this.setState({currentSelected: this.state.currentSelected.filter((item) => {
-        return item != this.props.storage[event.target.name].name
+        return item != this.props.storage[event.target.name].name.toLowerCase()
       })},
       () => {this.props.filterRecipes(this.state.currentSelected)})
     }
@@ -70,7 +70,11 @@ class StoragePage extends Component {
           <div className="inventory_bottom">
             {item.location}
             <div className="inventory_more">
-              <img className="inventory_more_icon" src="https://img.icons8.com/windows/32/000000/info.png" />
+              <img
+                className="inventory_more_icon"
+                src="https://img.icons8.com/windows/32/000000/info.png"
+                onClick={() => {this.props.changeToFoodPage(item)}}
+              />
             </div>
           </div>
         </div>
@@ -86,7 +90,6 @@ class StoragePage extends Component {
         <div className="storage_units">
           {this.renderStorageUnits()}
         </div>
-        <img className="storage_add_icon" src="https://img.icons8.com/ios/50/000000/plus-math.png" />
       </div>
     )
   }
