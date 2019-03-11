@@ -35,7 +35,6 @@ class RecipePage extends Component {
   }
 
   render() {
-    //console.log(this.state.currentRecipes)
     return (
       <div>
         <div className="recipe_page_container">
@@ -162,10 +161,8 @@ class RecipePage extends Component {
         var filterList = this.state.filters.filter((filter) => {
           return !recipe.filters.includes(filter);
         })
-        console.log(filterList);
         return filterList.length == 0;
     })
-    console.log(recipeList);
     this.setState({
       currentRecipes: recipeList,
     })

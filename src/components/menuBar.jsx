@@ -6,7 +6,7 @@ const MenuBar = props => {
       <img
         className="menu_icon"
         src="https://i.imgur.com/eusJynU.png"
-        onClick={(event) => {props.changePage(3)}}
+        onClick={(event) => {props.changePage(4)}}
       />
       <img
         className="menu_icon align_left"
@@ -15,7 +15,7 @@ const MenuBar = props => {
       />
       <img
         className="menu_icon align_left"
-        src="https://i.imgur.com/g6KHF1R.png" 
+        src="https://i.imgur.com/g6KHF1R.png"
         onClick={(event) => {props.changePage(1)}}
       />
     </div>
