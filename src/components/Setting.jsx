@@ -27,7 +27,7 @@ class Setting extends React.Component {
       <div>
         <div className="main_page_container">
 
-        <h3 className="title">
+        <h3 className="title2">
         <div onClick={this.handlePhotoClick}>
         <img src="https://img.icons8.com/ios/50/000000/settings-filled.png"></img>
 			  </div>
@@ -43,9 +43,11 @@ class Setting extends React.Component {
             <br />
             <h4 className="filter_text checklist">Recipe Preferences</h4>
             <br />
+            <div className="fixbottom">
             <SettingBar>Allergies</SettingBar>
             <SettingBar>Appliances</SettingBar>
             <SettingBar>Preference</SettingBar>
+            </div> 
             <hr />
 
           </div>

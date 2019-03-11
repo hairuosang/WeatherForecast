@@ -232,7 +232,7 @@ button:active {
   width: 350px;
   height: 600px;
   border: 2px solid;
-  border-top: 1px solid;
+  border-top: 2px solid;
 }
 
 .right{
@@ -323,9 +323,7 @@ button:active {
   justify-content: center;
 }
 
-.settingtitle {
-  padding-right: 70px;
-}
+
 
 .photo_icon{
   display: flex;
@@ -390,9 +388,13 @@ width: 350px;
   flex-direction: row;
   align-items: center;
   justify-content: center;
- 
   border-bottom: 2px solid;
-
+}
+.fixbottom {
+  border-bottom: 2px solid;
+  width: 350px;
+  height: 120px;  
+  border-bottom: 2px solid
 }
 
 .pop_up_divider {
