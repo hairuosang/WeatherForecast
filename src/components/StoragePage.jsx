@@ -9,8 +9,10 @@ class StoragePage extends Component {
     this.state = {
       currentState: 0,
       currentSelected: [],
+      currentCategory: "all",
     }
     this.onInputSelect = this.onInputSelect.bind(this)
+    this.handleClickCategory = this.handleClickCategory.bind(this)
   }
 
   render() {
@@ -55,10 +57,14 @@ class StoragePage extends Component {
     }
   }
 
+  handleClickCategory(category) {
+    this.setState({currentCategory: category})
+  }
+
   renderInventoryUnits() {
     var inventory = []
     var index = 0;
-    this.props.storage.map((item) => {
+    this.props.getStorageByCategory(this.state.currentCategory).map((item) => {
       inventory.push(
         <div className="inventory_block">
           <div className="inventory_top">
@@ -94,14 +100,20 @@ class StoragePage extends Component {
     )
   }
 
+
+
   renderStorageUnits() {
     var unitList = []
     this.props.storageUnits.map((unit) => {
-        unitList.push(
-          <div className="unit">
-            {unit.name}
-          </div>
-        )
+      const storageStyle = {
+        "color": (this.state.currentCategory == unit.name) ? "white" : "black",
+        "background": (this.state.currentCategory == unit.name) ? "black" : "white",
+      }
+      unitList.push(
+        <div className="unit" style={storageStyle} onClick={(event) => {this.handleClickCategory(unit.name)}}>
+          {unit.name}
+        </div>
+      )
     })
     return unitList
   }

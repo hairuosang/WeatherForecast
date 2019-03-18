@@ -22,7 +22,6 @@ class MainPage extends Component {
     this.handleFormAdd = this.handleFormAdd.bind(this);
     this.handleFormCancel = this.handleFormCancel.bind(this);
     this.changeManual = this.changeManual.bind(this);
-
   }
 
   render() {
@@ -72,6 +71,16 @@ class MainPage extends Component {
   }
 
   handleFormAdd() {
+    var item = {
+      name: this.state.name,
+      location: this.state.storage,
+      expDate: this.state.exp,
+      quantity: this.quantity,
+      han: "amazing food safety tipes",
+      description: "amazing facts about this food",
+      rec: "amazing and tasty recipes"
+    }
+    this.props.addItemToStorage(item)
     this.setState({
       currentState: 0,
       name: "",
@@ -79,6 +88,7 @@ class MainPage extends Component {
       exp: "",
       storage: "",
     });
+
   }
 
   handleFormCancel() {
@@ -126,9 +136,9 @@ class MainPage extends Component {
             <div className="pop_up_divider">
               Storage:
       			  <select id="select" name="storage" value={this.state.storage} onChange={(event) => {this.handleHandleChange("storage", event)}}>
-                <option value="fridge">Fridge</option>
-                <option value="freezer">Freezer</option>
-      					<option value="pantry">Pantry</option>
+                <option value="Fridge">Fridge</option>
+                <option value="Freezer">Freezer</option>
+      					<option value="Other">Pantry</option>
       				</select>
             </div>
             <div className="form_buttons">

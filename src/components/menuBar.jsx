@@ -10,7 +10,7 @@ const MenuBar = props => {
       />
       <img
         className="menu_icon align_left"
-        src="https://i.imgur.com/zxFvvYF.png"
+        src={(props.changeManual) ? "https://img.icons8.com/cotton/64/000000/plus.png" : "https://i.imgur.com/zxFvvYF.png"}
         onClick={(props.changeManual) ? props.changeManual : (event) => {props.changePage(0)}}
       />
       <img

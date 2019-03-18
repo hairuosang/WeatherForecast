@@ -19,9 +19,9 @@ class App extends Component {
        currentState: 0,
        storageUnits: [
          {name: "all", items: []},
-         {name: "fridge", items: []},
-         {name: "freezer", items: []},
-         {name: "other", items: []},
+         {name: "Fridge", items: []},
+         {name: "Freezer", items: []},
+         {name: "Other", items: []},
        ],
        storage: [
          {
@@ -74,11 +74,38 @@ class App extends Component {
     this.findRecipes = this.findRecipes.bind(this)
     this.filterRecipes = this.filterRecipes.bind(this)
     this.changeToFoodPage = this.changeToFoodPage.bind(this)
+    this.getStorageByCategory = this.getStorageByCategory.bind(this)
+    this.addItemToStorage = this.addItemToStorage.bind(this)
+    this.removeItemFromStorage = this.removeItemFromStorage.bind(this)
   }
 
   changeToFoodPage(item) {
     this.setState({currentFood: item, currentState: 5})
   }
+
+  getStorageByCategory(category) {
+    console.log(category);
+    if (category == "all") {
+      return this.state.storage
+    }
+
+    var items = this.state.storage.filter((item) => {
+      return item.location == category
+    })
+    return items;
+  }
+
+  addItemToStorage(item) {
+    this.setState({storage: [...this.state.storage, item]})
+  }
+
+  removeItemFromStorage(removeItem) {
+    var storage = this.state.storage.filter((item) => {
+      return item.name != removeItem.name
+    })
+    this.setState({storage: storage})
+  }
+
 
   changeState(stateNumber) {
     if (stateNumber !=  1) {
@@ -108,7 +135,10 @@ class App extends Component {
   renderPages() {
     if (this.state.currentState == 0) {
       return (
-        <MainPage changePage={this.changeState} />
+        <MainPage
+          changePage={this.changeState}
+          addItemToStorage={this.addItemToStorage}
+        />
       )
     } else if (this.state.currentState == 1) {
       return (
@@ -120,7 +150,12 @@ class App extends Component {
       )
     } else if (this.state.currentState == 2) {
       return (
-        <AppContainer changePage={this.changeState} />
+        <AppContainer
+          changePage={this.changeState}
+          filterRecipes={this.filterRecipes}
+          findRecipes={this.findRecipes}
+          storage={this.state.storage}
+       />
       )
     } else if (this.state.currentState == 3) {
       return (
@@ -135,6 +170,7 @@ class App extends Component {
           findRecipes={this.findRecipes}
           filterRecipes={this.filterRecipes}
           changeToFoodPage={this.changeToFoodPage}
+          getStorageByCategory={this.getStorageByCategory}
         />
       )
     } else if (this.state.currentState == 5) {

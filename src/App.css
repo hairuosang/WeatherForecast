@@ -69,18 +69,15 @@ h4 {
 }
 
 .checklist {
-  margin: 0!important;
-  padding-left: 50px;
-  border-top: 0px solid;
-  border-bottom: 0px solid;
   width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .checklist2 {
-  padding-left: 50px;
   margin-bottom: 20px;
-  border-top: 2px solid;
-  border-bottom: 2px solid;
   width: 350px;
   height: 335px;
   text-align:left;
@@ -189,16 +186,19 @@ button:active {
 }
 
 .checklist {
-  padding-left: 50px;
-  border-top: 2px solid;
-  border-bottom: 2px solid;
   width: 350px;
-  }
+}
 
 .checklist3{
-    padding-left: 50px;
-    border-bottom: 2px solid;
-    width: 350px;
+  border-bottom: 2px solid;
+  width: 300px;
+  height: 60px;
+  margin-left: 25px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px black solid;
 }
 
 
@@ -276,9 +276,6 @@ button:active {
 	width:50%;
 	text-align:right;
 }
-
-
-
 
 .setting_page_container {
 	right: 0;
@@ -380,15 +377,13 @@ width: 350px;
 
 .title2 {
   width: 350px;
-  height: 100px;
+  height: 50px;
   padding-right: 500;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
- 
   border-bottom: 2px solid;
-
 }
 
 .pop_up_divider {
@@ -542,6 +537,13 @@ width: 350px;
   width: 300px;
   height: 25px;
   padding-left: 20px;
+}
+
+.notifcations_center {
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .align_center {
