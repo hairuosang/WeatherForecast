@@ -24,26 +24,30 @@ class Setting extends React.Component {
 
   render (){
     return (
-      <div className="center">
+      <div>
         <div className="main_page_container">
 
-        <h3 className="title">
-        <div className="setting_page_container" onClick={this.handlePhotoClick}>
-        <img className="notif_icon" src="https://img.icons8.com/ios/50/000000/settings-filled.png"></img>
+        <h3 className="title2">
+        <div onClick={this.handlePhotoClick}>
+        <img src="https://img.icons8.com/ios/50/000000/settings-filled.png"></img>
 			  </div>
          <div className="settingtitle">Settings</div>
          </h3>
 
-          <div className="upperSetting">
-            <h4 className="settingTop">Notifications -> Alert</h4>
+          <div>
+            <div>
+            <h4 className="filter_text">Notifications -> Alert</h4>
             <ItemList />
-            <h4 className="settingTop">Notifiy Expiry</h4>
-
+            <h4 className="filter_text">Notify Expiry</h4>
+            </div>
             <br />
-            <ItemCount count={allTheThings.length} />
+            <h4 className="filter_text checklist">Recipe Preferences</h4>
+            <br />
+            <div className="fixbottom">
             <SettingBar>Allergies</SettingBar>
             <SettingBar>Appliances</SettingBar>
             <SettingBar>Preference</SettingBar>
+            </div> 
             <hr />
 
           </div>
@@ -80,8 +84,8 @@ class Item extends React.Component {
   render (){
     let text = this.state.checked ? <strike>{this.props.message}</strike> : this.props.message;
     return (
-        <div className="setting_row">
-          <div className="app">
+        <div>
+          <div>
             &nbsp;{text}
             <Toggler onClick={this.handleClick} />
             <hr />
